@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+        <head>
+                <title>Путешествия</title>
+                <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+                <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+                <link rel="shortcut icon" href="../resources/image/world.png">
+                <script src="script/jquery-1.10.2.js"></script>
+                <script src="script/backToTop.js" type="text/javascript"></script>
+                <script src="script/dynamic-section.js" type="text/javascript"></script>
+            
+                <script data-main="script/config.js" src="script/require.js"></script>
+            
+            </head>
+            <body onload="checkCookies()">
+                    <header>
+                            <div id="logo">
+                                <a href="/"><img src="../resources/image/world.png" width="80" height="80"></a>
+                            </div>
+                            <nav>
+                                <ul>
+                                    <li class = "text"><a href="sites">Сайты </a></li>
+                                    <li class = "text"><a href="timetour">Туры</a></li>
+                                    <li class = "text"><a href="facts">Интересные факты</a></li>
+                                </ul>
+                            </nav>
+
+    <div class="error-wrapper">
+        <div class="error">
+            <%= message %>
+        </div>
+        <div class="invalid">
+            <!--dynamic content-->
+        </div>
+    </div>
+    <nav>
+            <p class = "text">Добро пожаловать!</p><br>
+            <a class="dropdown-toggle" href="#" title="Menu"><span id="user"><%= currentUser %></span></a>
+            <ul class="dropdown">
+                <li class = "text"><a href="/tour">Рекомендуемые туры в ближайшее время</a></li>
+                <li class = "text"><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+</header>
+
+<main>
+    <div id="list-wrapper">
+        <table id="facts-table">
+            <caption class = "text_caption">Рекомендуемые туры</caption><br><br>
+            <tbody>
+            <tr>
+                <th>Место</th>
+                <th>Афиша</th>
+                <th>Дата отъезда</th>
+                <th>Дата прибытия</th>
+                <th>Стоимость путевки, $</th>
+            </tr>
+
+            <tr><td>Амстердам, Нидерланды</td><td><img id="facts-image" src="../resources/image/amst1.jpg" class="masterTooltip" title="Амстердам, Нидерланды" width="250" height="150"></td><td>20.12.2018</td><td>25.12.2018</td><td>200</td></tr>
+            <tr><td>Санкт-Петербург, Россия</td><td><img id="facts-image" src="../resources/image/piter.jpg" class="masterTooltip" title="Санкт-Петербург, Россия"width="250" height="150"></td><td>01.01.2019</td><td>04.01.2019</td><td>95</td></tr>
+            <tr><td>Лондон, Англия</td><td><img id="facts-image" src="../resources/image/london.jpg" class="masterTooltip" title="Лондон, Англия" width="250" height="150"></td><td>22.12.2018</td><td>29.12.2018</td><td>220</td></tr>
+            <tr><td>Берн, Швейцария</td><td><img id="facts-image" src="../resources/image/byorn.jpg" class="masterTooltip" title="Берн, Швейцария" width="250" height="150"></td><td>02.01.2019</td><td>12.01.2019</td><td>350</td></tr>
+            <tr><td>Осло, Норвегия</td><td><img id="facts-image" src="../resources/image/oslo.jpg" class="masterTooltip" title="Осло, Норвегия" width="250" height="150"></td><td>02.02.2019</td><td>17.02.2019</td><td>290</td></tr>
+        
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer>
+        <p id ="foot"><font color ="white" text-aling="center">Let's travel together!</font><br><br>
+            Phone for information: +375(33)341 80 70
+         </p>
+</footer>
+
+</body>
+</html>

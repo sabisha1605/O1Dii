@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <title>Путешествия</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <link rel="shortcut icon" href="../resources/image/world.png">
+    <script src="script/jquery-1.10.2.js"></script>
+    <script src="script/backToTop.js" type="text/javascript"></script>
+    <script src="script/dynamic-section.js" type="text/javascript"></script>
+    <script data-main="script/config.js" src="script/require.js"></script>
+</head>
+<body onload="checkCookies()">
+<header>
+    <div id="logo">
+        <a href="/"><img src="../resources/image/world.png" width="80" height="80"></a>
+    </div>
+    <nav>
+        <ul>
+            <li class = "text"><a href="sites">Сайты </a></li>
+            <li class = "text"><a href="timetour">Туры</a></li>
+            <li class = "text"><a href="facts">Интересные факты</a></li>
+        </ul>
+    </nav>
+
+    <div class="error-wrapper">
+        <div class="error">
+            <%= message %>
+        </div>
+        <div class="invalid">
+            <!--dynamic content-->
+        </div>
+    </div>
+
+    <div id="authorization_sect">
+        <% if(currentUser) { %>
+        <nav>
+            <p class = "text">Добро пожаловать!</p><br>
+            <a class="dropdown-toggle" href="#" title="Menu"><span id="user"><%= currentUser %></span></a>
+            <ul class="dropdown">
+                <li class = "text"><a href="/tour">Рекомендуемые туры в ближайшее время</a></li>
+                <li class = "text"><a href="/logout">Выход</a></li>
+            </ul>
+        </nav>
+        <% } else { %>
+        <ul id="auth">
+            <li><a href="/signup" class = "text" onclick="return makeSignUpSectionVisible()">Регистрация </a></li>
+            <li><a href="/login" class = "text" onclick="return makeLogInSectionVisible()"> Вход</a></li>
+        </ul>
+        <% } %>
+    </div>
+
+</header>
+
+<div id="content">
+    <article id="main-article">
+        <div id="article-content-wrapper">
+            <h2>«Мир – это книга, и те, кто не путешествуют, успевают прочесть лишь первую страницу»</h2>
+            <video id="video" width="400" height="300" controls="controls"
+            poster="../resources/image/2363.jpg"
+            onclick="this.paused ? this.play() : this.pause();">
+         <source src="../resources/video/travel.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+     </video>
+
+            <h1 class="text_h1">Почему путешествия делают нас лучше?</h1><br>
+            <img class = "img1" src="../resources/image/414293-PEZ26U-794.jpg" width="230" height="230"  alt="Иллюстрация-1" align="right"/>
+            <p> <span class="mini_h">1. Мы выходим из зоны комфорта.</span> В своей стране человек чувствует себя как дома, может возмущаться на соседей 
+                из соседних государств за неправильную парковку, решает на работе понятные ему задачи, ест привычную еду и
+                еще делает миллиард других обычных дел.
+                Находясь в путешествии, человек гость, куда бы он ни приехал, а оказавшись по уши в чужой культуре, за пределами
+                обычных обстоятельств, появляется возможность понимать мир глубже, научиться принимать молниеносно решения, 
+                смело разговаривать с незнакомыми людьми на иностранном языке. Таким образом, открывая в себе неведомые ранее 
+                черты характера.</p>
+            <img class = "img1" src="../resources/image/113900-OOK64C-951.jpg" width="230" height="230"  alt="Иллюстрация-2" align="left"/>
+            <br><p><span class="mini_h">2. Мы начинаем лучше понимать других людей.</span> Сидя на одном месте, человек сажает себя в
+                коробку, наполненную предрассудков. Его жизненные устои и принципы являются главными, а кто не согласен,
+                тот как минимум дурак. Так вот, с каждым путешествием предрассудков становится все меньше, а проблемы в общении 
+                с людьми исчезают сами собой.
+                Мир слишком разный, и глядя на него, видя традиции других народов, порой совершенно дикие и непонятные, 
+                чья-то локальная привычка или образ жизни уже не кажется такими вопиющим.</p>
+            <img class = "img1" src="../resources/image/travel3.jpg" width="230" height="200"  alt="Иллюстрация-3" align="right"/>
+            <br><p> <span class="mini_h">3. Мы готовы спокойно решать проблемы. </span> За время путешествия можно столкнуться 
+                с разными вещами, и не только хорошими. Например, опоздать на самолет, потерять деньги, 
+                заблудиться. В любом случае, человек устроен так, что найдет выход из ситуации. И если в первый раз это может 
+                сопровождаться нервотрепкой, то потом решение проблемы будет найдено без лишних эмоций..</p>    
+        </div>
+    </article>
+    <aside id="aside-part">
+        <div class="article">
+            <a><h2>О путешественниках</h2></a><br>
+
+            <svg width="175" height="200" viewBox="0 0 175 200">
+                    <defs>
+                      <linearGradient id="stripes" 
+                                        x1="0" y1="0" x2="100%" y2="50%">
+                              <stop stop-color="hsl(45,100%,65%)" offset="0"/>
+                              <stop stop-color="hsl(320,100%,65%)" offset="50%"/>
+                              <stop stop-color="hsl(200,100%,60%)" offset="100%"/>  
+                        </linearGradient>
+                    </defs>
+                        <path d="M175 58.756c0-39.538-28.619-58.756-87.5-58.756s-87.5 19.219-87.5 58.756c0 45.469 82.331 97.925 85.831 100.131 0.006 0.006 0.019 0 0.031 0.006 0.069 0.044 0.144 0.044 0.219 0.081 0.45 0.238 0.925 0.4 1.419 0.4s0.969-0.162 1.419-0.394c0.069-0.037 0.15-0.037 0.219-0.081 0.006-0.006 0.019 0 0.031-0.006 3.5-2.213 85.831-54.663 85.831-100.137zM112.5 58.756c0 34.75-17.975 75.756-25 90.456-7.025-14.694-25-55.681-25-90.456 0-47.063 14.269-52.506 25-52.506s25 5.444 25 52.506zM56.25 58.756c0 29.981 12.369 63.381 20.819 82.725-17.138-18.106-45.819-52.85-45.819-82.725 0-29.313 11.988-45.794 37.356-50.825-8.275 9.050-12.356 25.888-12.356 50.825zM118.75 58.756c0-24.938-4.075-41.775-12.356-50.825 25.369 5.031 37.356 21.519 37.356 50.825 0 29.875-28.681 64.612-45.819 82.725 8.45-19.337 20.819-52.744 20.819-82.725zM6.25 58.756c0-24.819 12.419-40.438 38.475-47.7-13.213 9.575-19.725 25.4-19.725 47.7 0 26.269 19.594 54.95 36.487 74.831-24.113-19.175-55.237-48.937-55.237-74.831zM113.512 133.588c16.894-19.881 36.488-48.556 36.488-74.831 0-22.3-6.513-38.131-19.725-47.7 26.056 7.263 38.475 22.881 38.475 47.7 0 25.894-31.125 55.656-55.238 74.831zM71.875 168.75c-1.725 0-3.125 1.4-3.125 3.125v18.75c0 5.256 4.119 9.375 9.375 9.375h18.75c5.256 0 9.375-4.119 9.375-9.375v-18.75c0-1.725-1.4-3.125-3.125-3.125h-31.25zM100 190.625c0 1.838-1.287 3.125-3.125 3.125h-18.75c-1.838 0-3.125-1.287-3.125-3.125v-15.625h25v15.625z" fill="#000000" transform="scale(.9) translate(9,9)"/>
+            </svg>
+            
+            <svg height="10" width="200">
+                    <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgb(59, 116, 202);stroke-width:4"/>
+            </svg>
+
+            <p class = "textmini">Известный мореплаватель Джеймс Кук во время своего 
+                путешествия к берегам Новой Каледонии преподнес в подарок 
+                местным жителям пару свиней, а, посетив Новую Зеландию и Таити, завез туда овец.
+                 В своих записях Кук объяснял, что таким образом он стремился повысить уровень 
+                 жизни аборигенов, а также искоренить людоедство на островах.
+            </p>
+            <img class="article-image" src="../resources/image/lighthouse.png" width="150" height="150"/>
+        </div><br>
+        <svg height="10" width="200">
+            <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgb(59, 116, 202);stroke-width:4"/>
+        </svg>
+        <br><div class="article">
+            <p class = "textmini">Статья, в связи с которой в прессе впервые упоминалось имя Че Гевары, 
+                никак не была связана с революцией. В этой статье сообщалось о турне на мопеде, 
+                протяженностью4 000 километров, в ходе которого будущий революционер объехал всю Южную 
+                Америку.
+            </p>
+            <img class="article-image" src="../resources/image/motorbike.png" width="190" height="150"/>
+        </div><br>
+        <svg height="10" width="200">
+                <line x1="0" y1="0" x2="200" y2="0" style="stroke:rgb(59, 116, 202);stroke-width:4"/>
+        </svg>
+        <br><div class="article">
+                <p class = "textmini">После того как был опубликован известный приключенческий роман 
+                    «За 80 дней вокруг света» искатели приключений неоднократно пытались повторить 
+                    описанные действия. Среди добившихся успеха оказалась американская журналистка 
+                    Нелли Блай. Время, за которое Блай удалось объехать Землю, составило ровно 72 дня
+                     6 часов 10 минут и 11 секунд.
+                </p>
+                <img class="article-image" src="../resources/image/planet-earth.png" width="160" height="160"/>
+        </div>
+    </aside>
+</div>
+</body>
+<footer>
+        <p id ="foot"><font color ="white" text-aling="center">Let's travel together!</font><br><br>
+            Phone for information: +375(33)341 80 70
+         </p>
+</footer>
+</html>
