@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "ejs": "*",
-    "express": "3.0.0rc4",
+    "express": "4.17.3",
     "mongoose": "*",
     "nodemon": "^1.18.9"
   }
